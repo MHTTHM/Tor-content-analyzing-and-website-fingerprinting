@@ -2,6 +2,12 @@
 
 # Tor 隐藏服务内容探测与网站指纹方法研究
 
+## 数据集
+
+数据集发布在[Tor type & HS DATASET](https://data.iptas.edu.cn/web/tors)
+
+the traffic could be found at [Tor type & HS DATASET](https://data.iptas.edu.cn/web/tors)
+
 ## 介绍
 
 本代码仓库包含了我的博士论文《Tor 隐藏服务内容探测与网站指纹方法研究》的相关代码。该研究主要关注如何有效地检测Tor网络中的隐藏服务内容以及如何进行网站指纹识别。
