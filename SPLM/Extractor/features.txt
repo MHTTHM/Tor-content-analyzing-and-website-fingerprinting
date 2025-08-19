@@ -1,0 +1,39 @@
+只用动量更新
+
+Overall classes:
+Metric       Mean       Std
+Accuracy     0.9436     0.0000
+Precision    0.9458     0.0000
+Recall       0.9436     0.0000
+F1           0.9432     0.0000
+Balanced_acc 0.9432     0.0000
+
+第一个值为初始值
+
+Overall classes:
+Metric       Mean       Std
+Accuracy     0.9082     0.0000
+Precision    0.9108     0.0000
+Recall       0.9082     0.0000
+F1           0.9072     0.0000
+Balanced_acc 0.9054     0.0000
+
+纯数据包数量
+
+Overall classes:
+Metric       Mean       Std
+Accuracy     0.8524     0.0000
+Precision    0.8595     0.0000
+Recall       0.8524     0.0000
+F1           0.8525     0.0000
+Balanced_acc 0.8525     0.0000
+
+使用log
+
+Overall classes:
+Metric       Mean       Std
+Accuracy     0.8995     0.0000
+Precision    0.9042     0.0000
+Recall       0.8995     0.0000
+F1           0.8996     0.0000
+Balanced_acc 0.8999     0.0000

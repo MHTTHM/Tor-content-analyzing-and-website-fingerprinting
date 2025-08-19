@@ -1,0 +1,72 @@
+parameter_sets:
+  - name: "default_set"
+    params:
+      feature: ['momentum']
+      threshold: [null]
+      zscore: [0.3]
+      vector: [1000]
+      momentum_val : [0.1]
+      flat: [false]
+      flat_segment_threshold: [1000]
+      flat_segment_zscore: [0.4]
+      rm_threshold: [1000]
+      rm_zscore: [0.4]
+
+      readfromfolder: [true]
+      input_dir: ["E:/Tor_public/Tik-Tok/origin_data/test"]
+      dirs: ["D:/2025HS_dataset/HS_longstream_flat",]
+      output_dir: ["D:/2025HS_dataset/Tik_Tok/TAM_Tiktok_OW.npy"]
+
+      trainfile: ["E:/Tor_public/WF_Util/Tik-Tok_TAM_train.npy"]
+      testfile: ["E:/Tor_public/WF_Util/Tik-Tok_TAM_test.npy"]
+
+      openworlddataset: [false]
+      openworldPath: ["E:/Tor_public/Tik-Tok/Undefended_OW"]
+      OWtrain: [10000]
+      OWtest: [50000]
+
+      modelpath: ['saved_models/RF_model.pth']
+  
+  - name: "others"
+    params:
+      feature: ['momentum', 'TAM', 'segment']
+
+      threshold: [null, 1000, 1500, 2000]
+      zscore: [ 0.6, 0.8, 1, 1.5]
+      vector: [400,500,600]
+      flat: [false]
+      flat_segment_threshold: [1000]
+      flat_segment_zscore: [0.4]
+      rm_threshold: [1000]
+      rm_zscore: [0.4]
+
+      percentile_threshold: [75, 80, 85]
+
+      readfromfolder: [true]
+      input_dir: ["D:/2025HS_dataset/HS_longstream", "E:/Tor公开数据集/Tik-Tok/Undefended_CW", "G:/tamaraw/sequence", "E:/Tor_public/Tik-Tok/origin_data/WTF_PAD"]
+      output_dir: ["D:/2025HS_dataset/Tik_Tok/Momentum_Tiktok_OW.npy"]
+
+      readfromfolder: [false]
+      trainfile: ["D:/2025HS_dataset/Tik_Tok/TAM_Tiktok_CW_train.npy"]
+      testfile: ["D:/2025HS_dataset/Tik_Tok/TAM_Tiktok_CW_test.npy"]
+
+      openworlddataset: [false]
+      openworldPath: ["E:/Tor公开数据集/Tik-Tok/Undefended_OW"]
+      OWtrain: [15000]
+      OWtest: [50000]
+  
+  - name: "multilabel_set"
+    params:
+      feature: 'momentum'
+
+      threshold: null
+      zscore: 0.16
+      vector: 500
+      momentum_val : 0.1
+
+      readfromfolder: true
+      multi-tab: true
+      input_dir: "D:/博士研究/论文写作/202410类别分类论文/Momentum_WF/WF_Code/multilabel_dataset"
+      output_dir: "D:/博士研究/论文写作/202410类别分类论文/Momentum_WF/WF_Code/dataset/Multilabel_data.npy"
+
+      modelpath: 'saved_models/RF_model_multilabel.pth'

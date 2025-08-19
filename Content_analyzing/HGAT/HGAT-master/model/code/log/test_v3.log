@@ -1,0 +1,205 @@
+Loading test_v3 dataset...
+Loading text content...
+../data/test_v3/
+test_v3
+text
+label matrix shape: torch.Size([502, 5])
+done.
+Loading topic content...
+../data/test_v3/
+test_v3
+topic
+done.
+Loading entity content...
+../data/test_v3/
+test_v3
+entity
+done.
+Building graph...
+Num of edges: 13159
+train, vali, test:  125 125 252
+Transfer to be inductive.
+# input_nodes: 252, # related_nodes: 842 / 1506
+# input_nodes: 125, # related_nodes: 784 / 1506
+# input_nodes: 125, # related_nodes: 780 / 1506
+Sum: # input_nodes: 502, # related_nodes: 875 / 1506
+
+
+
+No. 1 test.
+
+HGAT(
+  (gc2): ModuleList(
+    (0): GraphConvolution (512 -> 7)
+  )
+  (gc1): GraphAttentionConvolution(
+    (weights): ParameterList(
+        (0): Parameter containing: [torch.FloatTensor of size 204x512]
+        (1): Parameter containing: [torch.FloatTensor of size 204x512]
+        (2): Parameter containing: [torch.FloatTensor of size 371x512]
+    )
+    (att_list): ModuleList(
+      (0): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+      (2): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+  )
+  (at1): ModuleList(
+    (0): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+    (1): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+    (2): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+  )
+  (at2): ModuleList(
+    (0): SelfAttention(
+      (linear): Linear(in_features=7, out_features=50, bias=True)
+    )
+    (1): SelfAttention(
+      (linear): Linear(in_features=7, out_features=50, bias=True)
+    )
+    (2): SelfAttention(
+      (linear): Linear(in_features=7, out_features=50, bias=True)
+    )
+  )
+)
+30
+30
+[torch.Size([512, 7]), torch.Size([7]), torch.Size([512]), torch.Size([204, 512]), torch.Size([204, 512]), torch.Size([371, 512]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 7]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 7]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 7]), torch.Size([50])]
+Epoch: 0001 | loss: 2.6039
+ 125
+preds: [[0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]]

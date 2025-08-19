@@ -1,0 +1,37 @@
+model: Simple
+outputdir: experiment/yeast/NoPretrain
+model_args:
+  backbone: CNNClassifier
+  backbone_kwargs:
+    in_dim: 100
+  n_class: 96
+  n_hidden: 1
+  out_dim: 256
+train: ../data/dataset/Tik_Tok/multilabel_tiktok_train.npy
+dev: ../data/dataset/Tik_Tok/multilabel_tiktok_test.npy
+test: ../data/dataset/Tik_Tok/multilabel_tiktok_test.npy
+n_epochs: 30
+iters_per_epoch: 50 # ~1500 samples in train
+dataloader_args:
+  batch_size: 32
+  num_workers: 0
+patience: 20
+criterion: SupCon
+criterion_args: 
+  temperature: 0.1
+saving_interval: 51
+lrp: 0.1
+optimizer: Adam
+optimizer_args:
+  lr: 0.0004
+scheduler: ReduceLROnPlateau
+scheduler_args:
+  mode: min # min for loss
+  factor: 0.1
+  patience: 2
+  cooldown: 1
+  verbose: False
+  threshold: 0.001
+transform_kwargs:
+  p: 0
+  h5: ../data/dataset/Tik_Tok/Tik_Tok_train.hdf5

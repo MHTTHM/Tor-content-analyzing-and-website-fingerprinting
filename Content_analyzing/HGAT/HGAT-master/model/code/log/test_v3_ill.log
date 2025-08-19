@@ -1,0 +1,112 @@
+Loading test_v3_ill dataset...
+Loading text content...
+../data/test_v3_ill/
+test_v3_ill
+text
+label matrix shape: torch.Size([22733, 6])
+done.
+Loading topic content...
+../data/test_v3_ill/
+test_v3_ill
+topic
+done.
+Loading entity content...
+../data/test_v3_ill/
+test_v3_ill
+entity
+done.
+Building graph...
+Num of edges: 272408
+train, vali, test:  1013 5 21720
+Transfer to be inductive.
+# input_nodes: 21720, # related_nodes: 24095 / 68199
+# input_nodes: 1013, # related_nodes: 23482 / 68199
+# input_nodes: 5, # related_nodes: 9447 / 68199
+Sum: # input_nodes: 22733, # related_nodes: 24109 / 68199
+
+
+
+No. 1 test.
+
+HGAT(
+  (gc2): ModuleList(
+    (0): GraphConvolution (512 -> 8)
+  )
+  (gc1): GraphAttentionConvolution(
+    (weights): ParameterList(
+        (0): Parameter containing: [torch.FloatTensor of size 1188x512]
+        (1): Parameter containing: [torch.FloatTensor of size 1188x512]
+        (2): Parameter containing: [torch.FloatTensor of size 1416x512]
+    )
+    (att_list): ModuleList(
+      (0): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+      (1): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+      (2): Attention_NodeLevel(
+        (leakyrelu): LeakyReLU(negative_slope=0.2)
+      )
+    )
+  )
+  (at1): ModuleList(
+    (0): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+    (1): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+    (2): SelfAttention(
+      (linear): Linear(in_features=512, out_features=50, bias=True)
+    )
+  )
+  (at2): ModuleList(
+    (0): SelfAttention(
+      (linear): Linear(in_features=8, out_features=50, bias=True)
+    )
+    (1): SelfAttention(
+      (linear): Linear(in_features=8, out_features=50, bias=True)
+    )
+    (2): SelfAttention(
+      (linear): Linear(in_features=8, out_features=50, bias=True)
+    )
+  )
+)
+30
+30
+[torch.Size([512, 8]), torch.Size([8]), torch.Size([512]), torch.Size([1188, 512]), torch.Size([1188, 512]), torch.Size([1416, 512]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([512, 1]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 512]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 8]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 8]), torch.Size([50]), torch.Size([100, 1]), torch.Size([50, 8]), torch.Size([50])]
+Epoch: 0001 | loss: 2.4205not mulit label
+
+ preds lenght 1013
+ | loss: 2.5086not mulit label
+
+ preds lenght 1013
+ | time: 52.7375s
+                                                                 test
+isinstance
+ | loss: 2.4842not mulit label
+
+ preds lenght 5
+ | time: 3.6490s
+Epoch: 0002 | loss: 2.0650not mulit label
+
+ preds lenght 1013
+ | loss: 2.4140not mulit label
+
+ preds lenght 1013
+ | time: 55.0897s
+                                                                 test
+isinstance
+ | loss: 2.3204not mulit label
+
+ preds lenght 5
+ | time: 3.5282s
+Optimization Finished!
+Total time elapsed: 115.0071s
+The best result is: ACC: 0.0000 F1: 0.0000, where epoch is -1
+
+
+
+
+0:	vali:  0.00000	test:  ACC: 0.0000 F1: 0.0000, epoch=-1

@@ -1,0 +1,38 @@
+outputdir: experiment/yeast/Pretrain
+model: PretrainModel
+model_args:
+  out_dim: 256
+  cap_Q: 256
+  n_hidden: 1
+  momentum: 0.999
+  n_class: 99
+  backbone: CNNClassifier
+  backbone_kwargs:
+    in_dim: 100
+train: D:/博士研究/论文写作/202410类别分类论文/Suervised-Contrasive-Learning/MulSupCon/data/dataset/Tik_Tok/multilabel_tiktok_train.npy
+n_epochs: 150
+iters_per_epoch: 1000 # ~1500 samples in train
+dataloader_args:
+  batch_size: 64
+  num_workers: 0
+patience: 210
+criterion: BCEWithLogitsLoss # WeightedSupCon, SupCon, CrossEntropyLoss
+criterion_args: 
+  reduction: mean
+saving_interval: 211
+pattern_args:
+  pattern: any # all, any, MulSupCon 
+  with_weight: False # True
+n_heads: 1
+transform_kwargs:
+  p: 0.5
+  h5: D:/博士研究/论文写作/202410类别分类论文/Suervised-Contrasive-Learning/MulSupCon/data/dataset/Tik_Tok/multilabel_tiktok_train.npy
+optimizer: Adam
+optimizer_args:
+  lr: 0.0004
+  weight_decay: 0.00001
+scheduler: CosineAnnealingWarmRestarts
+scheduler_args:
+  T_0: 50
+  T_mult: 2
+  eta_min: 0.0001
