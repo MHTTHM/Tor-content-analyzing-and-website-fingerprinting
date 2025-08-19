@@ -21,6 +21,17 @@ Content_analyzing/                 // 内容分析相关代码
         requirement.txt            // 依赖
         codes/                     // MulSupCon 源码
     page-similarity/                
+SPLM/                              // 基于序列模式的学习
+    CNN_transformer.txt
+    config.yaml                    // 配置文件
+    const.py                       // 常量
+    README.md
+    run_pipeline.py                // 自动化训练测试脚本
+    Train_test.py                  // 训练测试
+    Extractor/
+    models/
+    pcap_process/
+    utils/
 HPETC/                              // 流量分类相关代码
     Classifier_baseline.py         // 基线分类器
     Classifier.py                  // 分类器
@@ -33,17 +44,7 @@ HPETC/                              // 流量分类相关代码
     OL_Classifier_ratio.py         // 在线学习分类器 (比例)
     README.md
     modelpath/                     // 模型路径
-SPLM/                              // 基于序列模式的学习
-    CNN_transformer.txt
-    config.yaml                    // 配置文件
-    const.py                       // 常量
-    README.md
-    run_pipeline.py                // 自动化训练测试脚本
-    Train_test.py                  // 训练测试
-    Extractor/
-    models/
-    pcap_process/
-    utils/
+
 ```
 
 ## 各模块说明
@@ -56,15 +57,7 @@ SPLM/                              // 基于序列模式的学习
 *   **MulSupCon**: 实现了多监督对比学习方法，用于内容表征学习。
 *   **page-similarity**: 页面相似度分析相关代码。
 
-### 2. HPETC
-
-该目录包含流量分类相关代码，主要文件包括：
-
-*   **Classifier\_baseline.py**:  加载模型以识别基线结果。使用配置文件 [conf.py](HPETC/conf.py) 中的 `select_features`，从 [tor_testpath](HPETC/conf.py) 和 [nor_testpath](HPETC/conf.py) 读取数据，并使用 [modelpath](HPETC/conf.py) 中的模型进行预测。
-*   **OL\_Classifier\_ratio.py**: 实现了在线学习分类器，用于处理 Tor 流量和正常流量的比例问题。
-*   **ensemble.py**: 实现了集成分类器，用于提升分类性能。
-
-### 3. SPLM基于分段包长动量特征的WF
+### 2. SPLM基于分段包长动量特征的WF
 
 该目录包含基于序列模式学习的代码，用于流量分析。主要文件包括：
 
@@ -83,6 +76,14 @@ SPLM/                              // 基于序列模式的学习
 *   PyYAML
 
 具体依赖请参考各模块下的 `requirement.txt` 文件。
+
+### 3. HPETC
+
+该目录包含流量分类相关代码，主要文件包括：
+
+*   **Classifier\_baseline.py**:  加载模型以识别基线结果。使用配置文件 [conf.py](HPETC/conf.py) 中的 `select_features`，从 [tor_testpath](HPETC/conf.py) 和 [nor_testpath](HPETC/conf.py) 读取数据，并使用 [modelpath](HPETC/conf.py) 中的模型进行预测。
+*   **OL\_Classifier\_ratio.py**: 实现了在线学习分类器，用于处理 Tor 流量和正常流量的比例问题。
+*   **ensemble.py**: 实现了集成分类器，用于提升分类性能。
 
 ## 快速开始
 
